@@ -4,6 +4,7 @@
 #include <SFML/Audio.hpp>
 #include <ctime>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
@@ -84,13 +85,6 @@ int main()
 		}
 
 		// Get system time
-		std::time_t currentTime = std::time(NULL);
-
-		struct tm * ptm = localtime(&currentTime);
-
-		hourHand.setRotation(ptm->tm_hour * 30 + (ptm->tm_min / 2));
-		minuteHand.setRotation(ptm->tm_min * 6 + (ptm->tm_sec / 12));
-		secondsHand.setRotation(ptm->tm_sec * 6);
 
 		// Clear the window
 		window.clear(sf::Color::White);
