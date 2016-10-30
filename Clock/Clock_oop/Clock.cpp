@@ -6,7 +6,7 @@ Clock::Clock() :
 	m_hourHand(sf::RectangleShape(sf::Vector2f(5, 180))),
 	m_minuteHand(sf::RectangleShape(sf::Vector2f(3, 240))),
 	m_secondHand(sf::RectangleShape(sf::Vector2f(2, 250))),
-	m_clockFace(new ClockFace(m_window))
+	m_clockFace(new ClockFace())
 {
 
 }
@@ -17,6 +17,7 @@ void Clock::Run()
 	InitializeHand(m_hourHand, windowCenter, sf::Color::Black);
 	InitializeHand(m_minuteHand, windowCenter, sf::Color::Black);
 	InitializeHand(m_secondHand, windowCenter, sf::Color::Red);
+	m_clockFace->Initialize(m_window);
 
 	while (m_window.isOpen())
 	{
