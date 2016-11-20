@@ -17,6 +17,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <SFML/System/Time.hpp>
 #include <ctime>
 #include <iostream>
 #include <memory>

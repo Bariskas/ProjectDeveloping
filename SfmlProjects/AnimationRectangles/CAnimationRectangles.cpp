@@ -1,27 +1,14 @@
 #include "stdafx.h"
-#include "CAnimationRectangles.h"
 #include "Parameters.h"
+#include "Rectangles.h"
+#include "CAnimationRectangles.h"
 
 using namespace std;
 using namespace sf;
 
-CAnimationRectangles::CAnimationRectangles()
+CAnimationRectangles::CAnimationRectangles() :
+	m_window(sf::VideoMode(800, 600), "SFML Animation")
 {
-	m_rectangles.resize(RECTANGLES_NUMBER);
-
-	Vector2f size = Vector2f(RECTANGLES_SIDE_LONG, RECTANGLES_SIDE_LONG);
-	generate_n(m_rectangles, RECTANGLES_NUMBER, [&]() {
-		return new RectangleShape(size);
-	});
-
-	int i = 0;
-	transform(m_rectangles.begin(), m_rectangles.end(), m_rectangles.begin(), 
-		[&](RectangleShape& rectangle){
-			rectangle.setPosition(i * RECTANGLES_SIDE_LONG + i * DISTANCE_BETWEEN, 0);
-			rectangle.setOrigin(size / 2.f);
-			rectangle.setFillColor(RECTANGLE_COLOR);
-		}
-	)
 }
 
 
@@ -31,6 +18,10 @@ CAnimationRectangles::~CAnimationRectangles()
 
 void CAnimationRectangles::Run()
 {
+	m_rectangles.Init();
+	m_animationPool.push_back(new MoveAnimation(10, { 100, 100 }, m_rectangles));
+	m_animationPool.push_back(new MoveAnimation(10000, { 200, 200 }, m_rectangles));
+	m_animationPool[0]->Initialize();
 	sf::Clock clock;
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 	while (m_window.isOpen())
@@ -41,8 +32,8 @@ void CAnimationRectangles::Run()
 		{
 			timeSinceLastUpdate -= TICK;
 			ProcessEvents();
-			Update(TICK);
 		}
+		Update();
 		Render();
 	}
 }
@@ -59,11 +50,19 @@ void CAnimationRectangles::ProcessEvents()
 	}
 }
 
-void CAnimationRectangles::Update(sf::Time deltaTime)
+void CAnimationRectangles::Update()
 {
-
+	if (m_animationPool[m_currentAnimationIndex]->IsExpired())
+	{
+		m_currentAnimationIndex = (++m_currentAnimationIndex) % m_animationPool.size();
+		m_animationPool[m_currentAnimationIndex]->Initialize();
+	}
+	m_animationPool[m_currentAnimationIndex]->UpdateRectangles();
 }
 
 void CAnimationRectangles::Render()
 {
+	m_window.clear();
+	m_window.draw(m_rectangles);
+	m_window.display();
 }

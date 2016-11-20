@@ -30,9 +30,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="CAnimationRectangles.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Parameters.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
@@ -42,6 +39,12 @@
     <ClInclude Include="MoveAnimation.h">
       <Filter>Заголовочные файлы\Animation</Filter>
     </ClInclude>
+    <ClInclude Include="Rectangles.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimationRectangles.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -50,11 +53,14 @@
     <ClCompile Include="AnimationRectangles.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="CAnimationRectangles.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
     <ClCompile Include="MoveAnimation.cpp">
       <Filter>Файлы исходного кода\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangles.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimationRectangles.cpp">
+      <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

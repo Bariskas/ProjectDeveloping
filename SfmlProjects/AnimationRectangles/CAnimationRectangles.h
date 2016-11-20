@@ -1,4 +1,7 @@
 #pragma once
+#include "Rectangles.h"
+#include "MoveAnimation.h"
+
 class CAnimationRectangles
 {
 public:
@@ -13,6 +16,8 @@ private:
 
 private:
 	sf::RenderWindow m_window;
-	RecVector m_rectangles;
+	CRectangles m_rectangles;
+	int m_currentAnimationIndex;
+	std::vector<IAnimation*> m_animationPool;
 };
 

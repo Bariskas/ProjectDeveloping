@@ -71,15 +71,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(sdk2015)\SFML-2.4.0\include;;$(sdk2015)\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>$(sdk2015)\SFML-2.4.0\lib;$(sdk2015)\boost_1_61_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(sdk2015)\SFML-2.4.0\include;;$(sdk2015)\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>$(sdk2015)\SFML-2.4.0\lib;$(sdk2015)\boost_1_61_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(sdk2015)\SFML-2.4.0\include;;$(sdk2015)\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>$(sdk2015)\SFML-2.4.0\lib;$(sdk2015)\boost_1_61_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(sdk2015)\SFML-2.4.0\include;;$(sdk2015)\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>$(sdk2015)\SFML-2.4.0\lib;$(sdk2015)\boost_1_61_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -95,7 +103,7 @@
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreLinkEvent>
-      <Command>xcopy /e /Y "C:\sdk\SFML-2.4.0\bin" "$(OutDir)"</Command>
+      <Command>xcopy /e /Y "$(sdk2015)\SFML-2.4.0\bin" "$(OutDir)"</Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -112,7 +120,7 @@
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreLinkEvent>
-      <Command>xcopy /e /Y "C:\sdk\SFML-2.4.0\bin" "$(OutDir)"</Command>
+      <Command>xcopy /e /Y "$(sdk2015)\SFML-2.4.0\bin" "$(OutDir)"</Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -133,7 +141,7 @@
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreLinkEvent>
-      <Command>xcopy /e /Y "C:\sdk\SFML-2.4.0\bin" "$(OutDir)"</Command>
+      <Command>xcopy /e /Y "$(sdk2015)\SFML-2.4.0\bin" "$(OutDir)"</Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -154,17 +162,18 @@
       <AdditionalDependencies>sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreLinkEvent>
-      <Command>xcopy /e /Y "C:\sdk\SFML-2.4.0\bin" "$(OutDir)"</Command>
+      <Command>xcopy /e /Y "$(sdk2015)\SFML-2.4.0\bin" "$(OutDir)"</Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IAnimation.h" />
     <ClInclude Include="CAnimationRectangles.h" />
+    <ClInclude Include="IAnimation.h" />
     <ClInclude Include="MoveAnimation.h" />
     <ClInclude Include="Parameters.h" />
+    <ClInclude Include="Rectangles.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -172,6 +181,7 @@
     <ClCompile Include="AnimationRectangles.cpp" />
     <ClCompile Include="CAnimationRectangles.cpp" />
     <ClCompile Include="MoveAnimation.cpp" />
+    <ClCompile Include="Rectangles.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
