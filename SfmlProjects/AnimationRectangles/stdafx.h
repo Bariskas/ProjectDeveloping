@@ -20,3 +20,6 @@
 #include <ctime>
 #include <iostream>
 #include <memory>
+#include <exception>
+
+typedef std::vector<sf::RectangleShape*> RecVector;
