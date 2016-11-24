@@ -45,12 +45,12 @@
     <ClInclude Include="CAnimationRectangles.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="RotateEachAnimation.h">
+      <Filter>Заголовочные файлы\Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimationRectangles.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="MoveAnimation.cpp">
@@ -61,6 +61,12 @@
     </ClCompile>
     <ClCompile Include="CAnimationRectangles.cpp">
       <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationRectangles.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="RotateEachAnimation.cpp">
+      <Filter>Файлы исходного кода\Animation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

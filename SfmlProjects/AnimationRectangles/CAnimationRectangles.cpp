@@ -2,12 +2,13 @@
 #include "Parameters.h"
 #include "Rectangles.h"
 #include "CAnimationRectangles.h"
+#include "RotateEachAnimation.h"
 
 using namespace std;
 using namespace sf;
 
 CAnimationRectangles::CAnimationRectangles() :
-	m_window(sf::VideoMode(800, 600), "SFML Animation")
+	m_window(sf::VideoMode(1280, 600), "SFML Animation")
 {
 }
 
@@ -19,20 +20,26 @@ CAnimationRectangles::~CAnimationRectangles()
 void CAnimationRectangles::Run()
 {
 	m_rectangles.Init();
-	m_animationPool.push_back(new MoveAnimation(10, { 100, 100 }, m_rectangles));
-	m_animationPool.push_back(new MoveAnimation(10000, { 200, 200 }, m_rectangles));
+	m_animationPool.push_back(new MoveAnimation(60, { 100, 100 }, m_rectangles));
+	m_animationPool.push_back(new MoveAnimation(60, { 200, 200 }, m_rectangles));
+	m_animationPool.push_back(new MoveAnimation(60, { 100, 200 }, m_rectangles));
+	m_animationPool.push_back(new MoveAnimation(60, { 200, 100 }, m_rectangles));
+	m_animationPool.push_back(new RotateEachAnimation(60, 360, m_rectangles));
+
 	m_animationPool[0]->Initialize();
 	sf::Clock clock;
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
+	m_window.setVerticalSyncEnabled(true);
+	m_window.setFramerateLimit(30);
 	while (m_window.isOpen())
 	{
 		ProcessEvents();
 		timeSinceLastUpdate += clock.restart();
-		while (timeSinceLastUpdate > TICK)
-		{
-			timeSinceLastUpdate -= TICK;
+		//while (timeSinceLastUpdate > TICK)
+		//{
+		//	timeSinceLastUpdate -= TICK;
 			ProcessEvents();
-		}
+		//}
 		Update();
 		Render();
 	}
