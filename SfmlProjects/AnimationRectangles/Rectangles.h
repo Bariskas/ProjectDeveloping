@@ -8,6 +8,7 @@ public:
 	void Init();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 	void move(const sf::Vector2f &offset);
+	void rotate(const float angle);
 	void setOrigin(const sf::Vector2f &origin);
 	sf::Vector2f getPosition();
 private:

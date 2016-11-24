@@ -48,6 +48,18 @@ void CRectangles::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	}
 }
 
+void CRectangles::rotate(const float angle)
+{
+	for (size_t i = 0; i < m_rectangles.size(); i++)
+	{
+		m_rectangles[i]->rotate(angle);
+	}
+	/*for (auto rec : m_rectangles)
+	{
+	(*rec).move(Vector2f(10, 0));
+	}*/
+}
+
 void CRectangles::move(const sf::Vector2f& offset)
 {
 	for (size_t i = 0; i < m_rectangles.size(); i++)
