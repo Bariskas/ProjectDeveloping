@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "Window.h"
 
@@ -11,7 +11,7 @@ public:
 	void HandleInput();
 	void Update();
 	void Render();
-	Window& GetWindow();
+	//Window& GetWindow();
 
 	sf::Time GetElapsed();
 	void RestartClock();
@@ -19,7 +19,9 @@ private:
 	void MoveDragon();
 	void RotateDragon();
 private:
-	Window m_window;
+	//Window m_window;
+	World m_world;
+	Snake m_snake;
 	sf::Texture m_dragonTexture;
 	sf::Sprite m_dragon;
 	sf::Vector2i m_velocity;

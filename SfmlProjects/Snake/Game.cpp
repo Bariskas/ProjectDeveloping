@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include "Game.h"
 
 Game::Game()
@@ -49,7 +49,7 @@ void Game::MoveDragon()
 	sf::Vector2u dragonTextureSize = m_dragonTexture.getSize();
 
 	if ((m_dragon.getPosition().x > windowSize.x - dragonTextureSize.x && m_velocity.x > 0)
-		||( m_dragon.getPosition().x < 0 && m_velocity.x < 0))
+		|| (m_dragon.getPosition().x < 0 && m_velocity.x < 0))
 	{
 		m_velocity.x = -m_velocity.x;
 	}
