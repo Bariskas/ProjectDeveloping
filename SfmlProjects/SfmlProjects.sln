@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AnimationRectangles", "Anim
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MiniGame", "MiniGame\MiniGame.vcxproj", "{D94FF822-046D-461D-9C5F-FE584DF8CFBC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Snake", "Snake\Snake.vcxproj", "{7F5F98B7-5E4F-4B25-B258-376AC1965235}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{D94FF822-046D-461D-9C5F-FE584DF8CFBC}.Release|x64.Build.0 = Release|x64
 		{D94FF822-046D-461D-9C5F-FE584DF8CFBC}.Release|x86.ActiveCfg = Release|Win32
 		{D94FF822-046D-461D-9C5F-FE584DF8CFBC}.Release|x86.Build.0 = Release|Win32
+		{7F5F98B7-5E4F-4B25-B258-376AC1965235}.Debug|x64.ActiveCfg = Debug|x64
+		{7F5F98B7-5E4F-4B25-B258-376AC1965235}.Debug|x64.Build.0 = Debug|x64
+		{7F5F98B7-5E4F-4B25-B258-376AC1965235}.Debug|x86.ActiveCfg = Debug|Win32
+		{7F5F98B7-5E4F-4B25-B258-376AC1965235}.Debug|x86.Build.0 = Debug|Win32
+		{7F5F98B7-5E4F-4B25-B258-376AC1965235}.Release|x64.ActiveCfg = Release|x64
+		{7F5F98B7-5E4F-4B25-B258-376AC1965235}.Release|x64.Build.0 = Release|x64
+		{7F5F98B7-5E4F-4B25-B258-376AC1965235}.Release|x86.ActiveCfg = Release|Win32
+		{7F5F98B7-5E4F-4B25-B258-376AC1965235}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
