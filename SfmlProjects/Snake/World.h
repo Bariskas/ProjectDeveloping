@@ -1,4 +1,6 @@
 #pragma once
+#include "Snake.h"
+
 class World
 {
 public:

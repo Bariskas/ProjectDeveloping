@@ -15,6 +15,7 @@ public:
 	bool IsFullscreen() const;
 	sf::Vector2u GetWindowSize() const;
 	sf::Vector2f GetMousePosition() const;
+	sf::RenderWindow& GetRenderWindow();
 	void ToggleFullscreen();
 
 	void Draw(sf::Drawable& drawable);

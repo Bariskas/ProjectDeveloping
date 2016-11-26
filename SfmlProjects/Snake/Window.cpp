@@ -35,10 +35,12 @@ void Window::Update()
 		{
 			m_isDone = true;
 		} 
-		else if (event.type == sf::Event::KeyPressed 
-			&& event.key.code == sf::Keyboard::F5)
+		else if (event.type == sf::Event::KeyPressed)
 		{
-			ToggleFullscreen();
+			if (event.key.code == sf::Keyboard::F5)
+			{
+				ToggleFullscreen();
+			}
 		}
 		else if (event.type == sf::Event::MouseMoved)
 		{
@@ -66,6 +68,11 @@ sf::Vector2u Window::GetWindowSize() const
 sf::Vector2f Window::GetMousePosition() const
 {
 	return m_mousePosition;
+}
+
+sf::RenderWindow & Window::GetRenderWindow()
+{
+	return m_window;
 }
 
 void Window::ToggleFullscreen()

@@ -75,8 +75,3 @@ void World::Render(sf::RenderWindow & window)
 	}
 	window.draw(m_appleShape);
 }
-
-
-World::~World()
-{
-}
